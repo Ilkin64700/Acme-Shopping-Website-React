@@ -1,0 +1,98 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+
+.contacthero {
+  .contactfullcontainer {
+    background-color: #222;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    @include u.lg{
+      flex-direction: column-reverse;
+    }
+    .container {
+      @include u.lg{
+        max-width: 992px;
+      }
+      .contact-content {
+        h1 {
+          color: #f9f9f9;
+          margin-top: 55px;
+          text-align: center;
+          width: 80%;
+          @include u.cst(1400){
+            width: 85%;
+          }
+          @include u.lg{
+            text-align: left;
+          }
+         
+        }
+        .contactlist {
+          display: flex;
+          justify-content: center;
+          margin-top: 30px;
+          @include u.md{
+            flex-wrap: wrap;
+          }
+          .contact-item {
+            background-color: #f9f9f9;
+            width: 27%;
+            min-height: 350px;
+            margin-right: 20px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 5px;
+            @include u.xl{
+              width: 30%;
+            }
+            @include u.lg{
+              width: 48%;
+              margin-right: 30px;
+            }
+            @include u.md{
+              width: 100%;
+              margin-top: 25px;
+            }
+            h2 {
+              margin-top: 50px;
+            }
+            .contactbutton-color {
+              color: #f9f9f9;
+              background-color: #eb5757;
+              padding: 9px 25px;
+              &:hover {
+                background-color: #222;
+              }
+            }
+          }
+        }
+      }
+    }
+    .positoncontainer {
+      position: absolute;
+      left: 0;
+      @include u.lg{
+        position: static;
+        padding-bottom: 35px;
+      }
+    }
+    .contact-image {
+      background-image: linear-gradient(90deg, #222, rgba(34, 34, 34, 0.2)),
+        url("../../../assets/images/ContactHero.jpg");
+      min-height: 550px;
+      width: 45%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      @include u.lg{
+        width: 100%;
+        background-image: linear-gradient(0deg, #222, rgba(34, 34, 34, 0.2)), url("../../../assets/images/ContactHero.jpg");;
+        background-position: center 35%;
+        min-height: 350px;
+      }
+    }
+  }
+}
+

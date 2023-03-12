@@ -1,0 +1,24 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.footer {
+  background-color: #222;
+ @include g.sectionheight;
+  .container {
+    .footer-menu {
+      display: flex;
+      justify-content: space-between;
+      .footer-logo {
+      }
+      .footer-socialinks {
+        a{
+            margin-left: 20px;
+            transition: all 0.3s;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+      }
+    }
+  }
+}

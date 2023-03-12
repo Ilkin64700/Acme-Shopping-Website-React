@@ -1,0 +1,42 @@
+.feature {
+  padding-top: 65px;
+  .container {
+    max-width: 1200px;
+    .feature-product {
+      a {
+        background-image: url("../../../assets/images/WhiteTent.jpg");
+        min-height: 250px;
+        display: inline-block;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        color: #f9f9f9;
+        position: relative;
+        .feauture-item {
+          position: absolute;
+          right: 1%;
+          top: 8%;
+          background-color: #f9f9f9;
+          color: #222;
+          padding: 5px 25px;
+          border-radius: 5px;
+          z-index: 1;
+        }
+        .feature-info {
+          position: absolute;
+          bottom: 0;
+          left: 2%;
+          z-index: 1;
+        }
+        .feature-imageoverlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background-color: rgba(34, 34, 34, 0.4);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+.local {
+  @include g.sectionheight;
+  
+  .container {
+    @include u.lg{
+      max-width: 992px;
+    }
+    @include u.md {
+      max-width: 768px;
+      padding: 0;
+    }
+    .local-imagetext {
+      display: flex;
+      justify-content: flex-end;
+      min-height: 550px;
+      position: relative;
+      @include u.md {
+        flex-wrap: wrap;
+      }
+      .local-image {
+        position: absolute;
+        top: 6%;
+        border-radius: 5px;
+        background-repeat: no-repeat;
+
+        @include u.md {
+          width: 100%;
+          position: static;
+          border-radius: 0;
+          background-size: 140%;
+        }
+        @include u.sm {
+          min-height: 450px;
+        }
+        @include u.xs {
+          min-height: 380px;
+        }
+      }
+      .local-right {
+        color: g.$txtcolor;
+        background-color: g.$bgcolor;
+        display: flex;
+        justify-content: flex-end;
+        padding: 50px;
+        border-radius: 5px;
+        @include u.md {
+          width: 100%;
+          justify-content: center;
+          border-radius: 0;
+        }
+        .local-text {
+         
+          @include u.lg {
+            padding: 0;
+          }
+          .local-header {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 10px;
+          }
+          .janejoe {
+            margin-bottom: 0;
+          }
+          .acmestrong {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+//data passed to local second
+
+.localfirstbgimage {
+  background-image: url("../../../assets/images/LocalOne.jpg");
+  background-size: 270%;
+  background-position: 69% 80%;
+  min-height: 440px;
+  width: 30%;
+  left: 0;
+  @include u.lg {
+    min-height: 500px;
+    width: 39%;
+    left: -5%;
+  }
+}
+
+.localsecondbgimage {
+  background-image: url("../../../assets/images/LocalTwo.jpg");
+  background-size: cover;
+  background-position: center 85%;
+  min-height: 660px;
+  width: 40%;
+  left: 5%;
+  @include u.lg{
+    left: -1%;
+    min-height: 600px;
+  }
+}
+
+.localfirstwidthadjustment {
+  width: 80%;
+}
+.localsecondwidthadjustment {
+  width: 65%;
+}
+
+.localfirsttextadjustment {
+  width: 80%;
+  padding-left: 9rem;
+  padding-right: 9rem;
+}
+
+.localsecondtextadjustment {
+  width: 100%;
+  @include u.cst(2000){
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+  @include u.xl{
+    padding-left: 75px;
+    padding-right: 0;
+  }
+}
+
+
+.localfirstsctnheight{
+  @include u.md {
+    padding-bottom: 0;
+  }
+}
+
+.localsecondsctnheight{
+  @include u.md {
+    padding-bottom: 65px;
+  }
+}

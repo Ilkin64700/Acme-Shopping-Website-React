@@ -1,0 +1,8 @@
+.hero {
+  background-image: url(../../imagescomponent/images/HeroImageOne.jpg);
+  background-color: black;
+  padding: 50px;
+}
+.hero .container {
+  background-color: black;
+}/*# sourceMappingURL=Hero.css.map */

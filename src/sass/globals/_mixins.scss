@@ -1,0 +1,13 @@
+@mixin bancolor {
+    color: #f9f9f9;
+    padding: 7px 20px;
+}
+
+@mixin font{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+@mixin sectionheight{
+   padding: 65px 0;
+}

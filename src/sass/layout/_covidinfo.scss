@@ -1,0 +1,17 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.allsections {
+  padding-bottom: 78px;
+  .textelement {
+    @include g.sectionheight;
+    .container {
+      .textelement-title {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 20px 0 10px;
+        line-height: 35px;
+      }
+    }
+  }
+}

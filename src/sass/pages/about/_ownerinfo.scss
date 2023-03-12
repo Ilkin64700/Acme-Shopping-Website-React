@@ -1,0 +1,29 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+.ownerinfo {
+  @include g.sectionheight;
+  .container {
+    .ownerlist {
+      display: flex;
+      justify-content: space-around;
+      @include u.md{
+        flex-wrap: wrap;
+      }
+      .owner-item {
+        width: 35%;
+        text-align: center;
+        @include u.md{
+          width: 100%;
+          margin-bottom: 45px;
+        }
+        img{
+            width: 200px;
+        }
+        .doe{
+            line-height: 30px;
+        }
+      }
+    }
+  }
+}

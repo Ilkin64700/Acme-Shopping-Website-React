@@ -1,0 +1,104 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.hero {
+  background-color: g.$bgcolor;
+  background-size: cover;
+  background-position: center center;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  .container {
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      .hero-header {
+        color: g.$txtcolor;
+      }
+      .hero-paragraph {
+        color: g.$txtcolor;
+        width: 30%;
+        font-size: 18px;
+        font-weight: 500;
+        @include u.lg {
+          width: 55%;
+        }
+        @include u.xs {
+          font-size: 14px;
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+//data passed via props to other hero sections
+
+.herofirstbgimage {
+  background-image: linear-gradient(0deg, #222, rgba(34, 34, 34, 0)),
+    url("../../assets/images/HeroImageOne.jpg");
+}
+
+.herosecondbgimage {
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0), #222),
+    url("../../assets//images/HeroSecond.jpg");
+}
+
+.herosecondalignment {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.herofirstwidthadjustment {
+  font-size: 60px;
+  width: 36%;
+  @include u.lg {
+    width: 66%;
+  }
+  @include u.xs {
+    font-size: 30px;
+    width: 54%;
+  }
+}
+
+.herosecondwidthadjustment {
+  width: 45%;
+  font-size: 45px;
+  @include u.lg {
+    width: 71%;
+  }
+  @include u.xs {
+    width: 100%;
+    font-size: 30px;
+  }
+}
+
+.herofirstbgcolor {
+  color: #f9f9f9;
+  line-height: 3;
+  &:hover {
+    background-color: #f9f9f9;
+    color: #222;
+  }
+}
+
+.herosecondbgcolor {
+  background-color: g.$txtcolor;
+  color: g.$bgcolor;
+  &:hover {
+    background-color: g.$navcolor;
+    border-color: g.$navcolor;
+    color: g.$txtcolor;
+  }
+}
+
+.herothirdbgimage {
+  background-image: linear-gradient(0deg, #222, rgba(34, 34, 34, 0)),
+    url("../../assets/images/HeroThird.jpg");
+}
+
+.herofourthbgimage {
+  background-image:linear-gradient(0deg,#222,rgba(34,34,34,0)), url("../../assets/images/HeroFour.jpg");
+  @include u.md{
+    background-position: 80% 50%;
+  }
+}

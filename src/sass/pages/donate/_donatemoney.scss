@@ -1,0 +1,46 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+.donatemoney {
+  @include g.sectionheight;
+  .container {
+    .donatemoneylist {
+      width: 50%;
+      margin: 0 auto;
+      border: 2px solid #222;
+      border-radius: 5px;
+      padding: 30px 40px 10px;
+      @include u.xl{
+        width: 60%;
+      }
+      @include u.lg{
+        width: 70%;
+      }
+      @include u.md{
+        width: 90%;
+      }
+      @include u.sm{
+        width: 95%;
+      }
+      @include u.xs{
+        width: 100%;
+      }
+      .donatemoney-item {
+        margin-bottom: 20px;
+        .donatebuttoncolor {
+          @extend %button-color;
+          color: #f9f9f9;
+          background-color: #eb5757;
+          width: 100%;
+          display: inline-block;
+          text-align: center;
+          padding: 15px 0;
+          font-size: 24px;
+          &:hover {
+            background-color: #222;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@use "../globals" as g;
+@use "../util" as u;
+@use 'commercecart';
+
+.navbar-container{
+  position: sticky;
+  top: 74px;
+  z-index: 100;
+  .navbar {
+    padding: 25px 0;
+    background-color: g.$navcolor;
+    .container 
+      .navmenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include u.lg {
+          width: 140px;
+        }
+        nav {
+          @include u.lg {
+            display: none;
+          }
+          a {
+            margin: 0 20px;
+            padding: 8px 11px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            color: g.$txtcolor;
+            text-decoration: none;
+            &:hover {
+              background-color: g.$bgcolor;
+            }
+          }
+        }
+  
+        .cart {
+          margin-left: 10px;
+          cursor: pointer;
+          a {
+            position: relative;
+            border-radius: 5px;
+            background-color: g.$bgcolor;
+            @include g.bancolor;
+            .shoppingcart {
+              font-size: 25px;
+            }
+            span {
+              position: absolute;
+              left: 30px;
+              top: -15px;
+              background-color: g.$txtcolor;
+              color: g.$bgcolor;
+              border-radius: 15px;
+              font-size: 17px;
+              font-weight: 700;
+              padding: 0 6px;
+              margin-left: 20px;
+            }
+          }
+          @include u.lg {
+            line-height: 1.1;
+          }
+        }
+        .nav-mobile {
+          font-size: 24px;
+          cursor: pointer;
+          display: none;
+          z-index: 1;
+          @include u.lg {
+            display: block;
+            color: g.$txtcolor;
+            padding: 18px;
+          }
+          .hamburger-menu {
+            vertical-align: inherit;
+          }
+        }
+      }
+    }
+  
+}
+// ovverlay max-992 width
+  .nav-overlay {
+    animation: drawerAnimation 0.5s ease-out backwards;
+    position: fixed;
+    top: 0;
+    display: none;
+    @include u.lg {
+      display: block;
+      width: 100%;
+    }
+    nav{
+      @include u.lg{
+        transform: translateX(0px);
+        transition: transform 0.4s ease 0s;
+        height: 100vh;
+        background-color: g.$navcolor;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      a{
+        @include u.lg{
+          display: block;
+          text-align: center;
+          color:#f9f9f9;
+          font-size: 30px;
+          padding: 5px 10px;
+          border-radius: 5px;
+          margin: 0 10px;
+          transition: all 0.3s ease;
+          &:hover{
+            background-color: g.$bgcolor;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  // active class to show animation and bg-color
+
+.hide-lightbox {
+  opacity: 0;
+  transform: none;
+  transition: opacity, transform 5s;
+}
+
+.lightbox {
+  opacity: 1;
+  transform: translateX(0px);
+  transition-property: opacity, transform;
+  transition-duration: 5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 5s;
+}
+
+.bgcolor {
+  border-radius: 5px;
+  background-color: g.$bgcolor;
+}
+
+
+
+  

@@ -1,0 +1,105 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+.support {
+  @include g.sectionheight;
+  .container {
+    .support-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      @include u.md{
+        flex-direction: column;
+      }
+      .support-leftext {
+        @include u.md{
+          margin-bottom: 15px;
+        }
+        .support-ways {
+          @extend %supportextfirst;
+        }
+        .support-outdoors {
+          font-size: 35px;
+          font-weight: 700;
+        }
+      }
+      .support-rightext {
+        width: 45%;
+        font-size: 16px;
+        font-weight: 400;
+        @include u.md{
+          width: 100%;
+        }
+      }
+    }
+    .support-choices {
+      display: flex;
+      justify-content: space-between;
+      @include u.md {
+        flex-wrap: wrap;
+      }
+      .support-option {
+        width: 30%;
+        @include u.md {
+          width: 84%;
+          margin-bottom: 40px;
+          @include u.sm{
+            width: 82%;
+          }
+        }
+        .support-cart {
+          .support-product {
+            background-color: g.$bgcolor;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 350px;
+            margin-bottom: 35px;
+            border-radius: 5px;
+            .support-productnumber {
+              color: g.$txtcolor;
+              position: absolute;
+              top: 10%;
+              left: 10%;
+              @include g.font;
+            }
+            .support-producttext {
+              color: g.$txtcolor;
+              @include g.font;
+              width: 55%;
+              text-align: center;
+              @include u.lg {
+                font-size: 25px;
+              }
+              @include u.md{
+                font-size: 35px;
+              }
+            }
+          }
+          .support-productdescription {
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+.circleimage {
+  position: absolute;
+  bottom: -25%;
+  right: -25%;
+}
+
+.triangleimage {
+  position: absolute;
+  bottom: -17%;
+  right: -11%;
+}
+
+.rectangleimage {
+  position: absolute;
+  bottom: -31%;
+  right: -14%;
+}

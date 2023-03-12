@@ -1,0 +1,53 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+
+.reason {
+    @include g.sectionheight;
+  .container {
+    .reason-entryinfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      @include u.md{
+        width: 70%;
+      }
+      @include u.sm{
+        width: 80%;
+      }
+      @include u.xs{
+        width: 90%;
+      }
+     
+      .aboveheading {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+      .belowheading {
+        text-align: center;
+      }
+    }
+    .reasonlist {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 65px;
+      @include u.md{
+        flex-wrap: wrap;
+      }
+      .reason-item {
+        width: 21%;
+        @include u.md{
+          width: 100%;
+          text-align: center;
+          margin-bottom: 45px;
+        }
+        @include u.sm{
+          width: 95%;
+        }
+      }
+    }
+  }
+}

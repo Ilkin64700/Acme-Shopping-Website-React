@@ -1,0 +1,86 @@
+@use "../../globals" as g;
+@use "../../util" as u;
+
+.contactinfo {
+  @include g.sectionheight;
+  .container {
+    .contact-content {
+      display: flex;
+      justify-content: space-between;
+      @include u.lg{
+        flex-wrap: wrap;
+      }
+      .contact-leftcontent {
+        width: 30%;
+        @include u.lg{
+          width: 100%;
+          margin-bottom: 40px;
+        }
+        h2 {
+          margin-bottom: 10px;
+        }
+        .contact-details {
+          p {
+            margin-bottom: 0;
+          }
+          .generalinq {
+            margin-top: 30px;
+          }
+        }
+      }
+      .contact-rightcontent {
+        width: 70%;
+        padding-left: 30px;
+      
+        @include u.lg{
+          width: 100%;
+          padding-left: 0;
+        }
+        h2 {
+        }
+        p {
+        }
+        .contact-form {
+          form {
+            label {
+              display: block;
+              margin-bottom: 5px;
+            }
+            input[type="text"] {
+              @extend %input;
+              &:focus{
+                outline: 0;
+                border-color: #eb5757 
+              }
+            }
+            input[type="email"] {
+              @extend %input;
+            }
+
+            textarea {
+              @extend %input;
+              height: auto;
+              line-height: 2;
+            }
+            input[type="submit"] {
+              @extend %button-color;
+              color: #f9f9f9;
+              background-color: #eb5757;
+              &:hover {
+                background-color: #222;
+              }
+            }
+          }
+          .successform{
+            background-color: #20c788;
+            color: #f9f9f9;
+            min-height: 280px;
+            text-align: center;
+            padding-top: 8rem;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}

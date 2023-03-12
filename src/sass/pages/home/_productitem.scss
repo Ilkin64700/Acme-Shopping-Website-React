@@ -1,0 +1,110 @@
+@use "../../globals" as g;
+@use "../../pages/home/product";
+@use "../../util" as u;
+
+.productitemcontent {
+  @include g.sectionheight;
+  .container {
+    .productitem-allcontent {
+      display: flex;
+      position: relative;
+      @include u.md {
+        flex-direction: column;
+      }
+      .productitem-leftcontent {
+        background-image: url("../../../assets/images/WhiteTent.jpg");
+        background-size: cover;
+        background-position: center center;
+        min-height: 450px;
+        height: min-content;
+        width: 36%;
+        border-radius: 5px;
+        @include u.md{
+          width: 100%;
+          margin-bottom: 30px
+        }
+      }
+      .salelabel {
+        @extend %salelabel;
+        top: 4%;
+        left: 28%;
+        right: auto;
+      }
+      .productitem-rightcontent {
+        padding-left: 60px;
+        width: 60%;
+        @include u.md{
+          padding: 0;
+          width: 100%;
+        }
+        .productitem-title {
+          font-weight: 600;
+        }
+        .allprices {
+          display: flex;
+          justify-content: left;
+          .productitem-price {
+            font-weight: 700;
+          }
+          .underline {
+            @extend %underline;
+          }
+        }
+
+        .addtocart-form {
+          margin-bottom: 20px;
+          form {
+            label {
+              display: block;
+              margin-bottom: 15px;
+              font-weight: 400;
+            }
+            input[type="number"] {
+              width: 60px;
+              height: 35px;
+              border-radius: 5px;
+              border: 1px solid;
+              border-color: none;
+              padding-left: 12px;
+              margin-right: 5px;
+            }
+
+            input[type="button"] {
+              color: #eb5757;
+              background-color: #f9f9f9;
+              border: 1px solid #eb5757;
+              padding: 5px 25px;
+              border-radius: 5px;
+              font-weight: 700;
+              transition: all 0.3s;
+              &:hover {
+                color: #f9f9f9;
+                background-color: #eb5757;
+              }
+            }
+          }
+        }
+        .tweet-title {
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 12px;
+        }
+        .tweet-widget {
+          a {
+            background-color: #1d9bf0;
+            color: #fff;
+            height: 28px;
+            display: inline-block;
+            padding: 1px 10px;
+            border-radius: 15px;
+            font-weight: 400;
+            .tweet-icon {
+              font-size: 18px;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
